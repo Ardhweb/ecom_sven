@@ -1,0 +1,14 @@
+<html>
+    <head></head>
+    <body>
+        {% for inline_admin_form in inline_admin_formset %}
+    <div class="author-inline-container">
+        <h2>Author Details</h2>
+        <!-- {{ inline_admin_form.form.as_p }} -->
+        <label>Regular Price</label>
+        {{ inline_admin_form.form.regular_price }}
+    </div>
+       {% endfor %}
+
+    </body>
+</html>

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}<title>{{product_item.product_title}}</title>{% endblock title %}
+
+{% block content %}
+<div class="d-flex m-2">
+    <img src="{{product_item.thumbnail.url}}" style="width:30%;height:30%;">
+    <div class="">
+        <p  class="fs-3 text-wrap m-1">{{product_item.product_title}}</p>
+        <p  class="text-wrap fs-5 m-1">In-stock: <span class="fw-bold ">{{product_item.in_stock}}</span></p>
+    </div>
+</div>
+
+<!--Do Not-->
+<p>ProductMedia</p>
+<div class="d-flex m-1">
+{% for product_media in product_media  %}
+
+    <img class="m-1"  src="{{product_media.image.url}}"  style="width:30%;height:30%;">
+
+
+    
+{% endfor %}
+</div>
+<!--Caution Loop-->
+
+<!--Final Context Dictionary Working Well With All Images-->
+<p>All Images Combines with both model.</p>
+<div class="mt-4 d-flex ">
+    {% for image_urls in image_urls %}
+    <img class="m-1" src="http://127.0.0.1:8000{{ image_urls}}" alt="Product Image" style="width:20%;height:20%;">
+    {% comment %} <p class="text-wrap">{{ image_urls}}</p> {% endcomment %}
+    
+    {% endfor %}
+</div>
+
+
+ 
+
+<!--Access Speific Elements ot string links from dict of list of image_urls-->
+<div class="d-flex text-wrap justify-content-evenly">
+    <h4>{{image_urls.0}}</h4>
+    <h4>{{image_urls.1}}</h4>
+</div>
+
+
+
+    
+
+
+{% endblock content %}
+
+
+
+

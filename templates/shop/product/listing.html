@@ -1,0 +1,18 @@
+
+{% for items in product_item  %}
+<a class="" href="{{ items.get_absolute_url }}" style="color:unset;text-decoration:none;">
+    <div class="card" style="width: 18rem;">
+      <img src="{{items.thumbnail.url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{items.product_title}}</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="{{ items.get_absolute_url }}" class="btn btn-primary btn-md">Buy</a>
+      </div>
+    </div>
+</a>
+  
+{% endfor %}
+
+
+
+  
